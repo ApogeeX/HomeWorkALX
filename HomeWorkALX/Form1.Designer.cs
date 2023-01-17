@@ -32,8 +32,15 @@
             this.tabMovingButton = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.goButton = new System.Windows.Forms.Button();
+            this.number2 = new System.Windows.Forms.TextBox();
+            this.number1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabMovingButton.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,13 +81,71 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.goButton);
+            this.tabPage1.Controls.Add(this.number2);
+            this.tabPage1.Controls.Add(this.number1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(792, 423);
             this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Dzielenie";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(447, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Press GO! to divide frist number by second number and test if result is even numb" +
+    "er";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Enter second number";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Enter first number";
+            // 
+            // goButton
+            // 
+            this.goButton.Location = new System.Drawing.Point(13, 178);
+            this.goButton.Name = "goButton";
+            this.goButton.Size = new System.Drawing.Size(100, 23);
+            this.goButton.TabIndex = 2;
+            this.goButton.Text = "GO!";
+            this.goButton.UseVisualStyleBackColor = true;
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
+            // 
+            // number2
+            // 
+            this.number2.Location = new System.Drawing.Point(13, 113);
+            this.number2.Name = "number2";
+            this.number2.Size = new System.Drawing.Size(100, 23);
+            this.number2.TabIndex = 1;
+            // 
+            // number1
+            // 
+            this.number1.Location = new System.Drawing.Point(13, 50);
+            this.number1.Name = "number1";
+            this.number1.Size = new System.Drawing.Size(100, 23);
+            this.number1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -89,9 +154,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Praca domowa z WinForms";
             this.tabControl1.ResumeLayout(false);
             this.tabMovingButton.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -102,5 +169,11 @@
         private TabPage tabMovingButton;
         private Button button1;
         private TabPage tabPage1;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Button goButton;
+        private TextBox number2;
+        private TextBox number1;
     }
 }
