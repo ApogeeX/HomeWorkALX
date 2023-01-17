@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMovingButton = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,9 +39,16 @@
             this.goButton = new System.Windows.Forms.Button();
             this.number2 = new System.Windows.Forms.TextBox();
             this.number1 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zamknijProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripMovingButton = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.moveButtonToMiddleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabMovingButton.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.contextMenuStripMovingButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -51,20 +59,21 @@
             this.tabControl1.Controls.Add(this.tabMovingButton);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 29);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 451);
+            this.tabControl1.Size = new System.Drawing.Size(800, 422);
             this.tabControl1.TabIndex = 0;
             // 
             // tabMovingButton
             // 
+            this.tabMovingButton.ContextMenuStrip = this.contextMenuStripMovingButton;
             this.tabMovingButton.Controls.Add(this.button1);
             this.tabMovingButton.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tabMovingButton.Location = new System.Drawing.Point(4, 24);
             this.tabMovingButton.Name = "tabMovingButton";
             this.tabMovingButton.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMovingButton.Size = new System.Drawing.Size(792, 423);
+            this.tabMovingButton.Size = new System.Drawing.Size(792, 394);
             this.tabMovingButton.TabIndex = 2;
             this.tabMovingButton.Text = "MovingButton";
             this.tabMovingButton.UseVisualStyleBackColor = true;
@@ -90,7 +99,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 423);
+            this.tabPage1.Size = new System.Drawing.Size(792, 394);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Dzielenie";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -147,19 +156,64 @@
             this.number1.Size = new System.Drawing.Size(100, 23);
             this.number1.TabIndex = 0;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plikToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // plikToolStripMenuItem
+            // 
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zamknijProgramToolStripMenuItem});
+            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.plikToolStripMenuItem.Text = "Plik";
+            // 
+            // zamknijProgramToolStripMenuItem
+            // 
+            this.zamknijProgramToolStripMenuItem.Name = "zamknijProgramToolStripMenuItem";
+            this.zamknijProgramToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.zamknijProgramToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.zamknijProgramToolStripMenuItem.Text = "Zamknij program";
+            this.zamknijProgramToolStripMenuItem.Click += new System.EventHandler(this.zamknijProgramToolStripMenuItem_Click_1);
+            // 
+            // contextMenuStripMovingButton
+            // 
+            this.contextMenuStripMovingButton.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moveButtonToMiddleToolStripMenuItem});
+            this.contextMenuStripMovingButton.Name = "contextMenuStrip1";
+            this.contextMenuStripMovingButton.Size = new System.Drawing.Size(198, 26);
+            // 
+            // moveButtonToMiddleToolStripMenuItem
+            // 
+            this.moveButtonToMiddleToolStripMenuItem.Name = "moveButtonToMiddleToolStripMenuItem";
+            this.moveButtonToMiddleToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.moveButtonToMiddleToolStripMenuItem.Text = "Move button to middle";
+            this.moveButtonToMiddleToolStripMenuItem.Click += new System.EventHandler(this.moveButtonToMiddleToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Praca domowa z WinForms";
             this.tabControl1.ResumeLayout(false);
             this.tabMovingButton.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.contextMenuStripMovingButton.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +229,10 @@
         private Button goButton;
         private TextBox number2;
         private TextBox number1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem plikToolStripMenuItem;
+        private ToolStripMenuItem zamknijProgramToolStripMenuItem;
+        private ContextMenuStrip contextMenuStripMovingButton;
+        private ToolStripMenuItem moveButtonToMiddleToolStripMenuItem;
     }
 }

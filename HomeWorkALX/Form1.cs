@@ -31,5 +31,16 @@ namespace HomeWorkALX
                 MessageBox.Show($"Result of dividing Number 1 by Number 2 is: {numb1 / numb2}, and that is a odd number", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }  
         }
+
+        private void zamknijProgramToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void moveButtonToMiddleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.button1.Location = new Point(tabMovingButton.Width/2-50, tabMovingButton.Height/2-12);
+        }
+
     }
 }
