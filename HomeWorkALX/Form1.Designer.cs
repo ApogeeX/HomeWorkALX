@@ -56,17 +56,36 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripUndoButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripRedoButton = new System.Windows.Forms.ToolStripButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.showButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.backgroundButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioOriginal = new System.Windows.Forms.RadioButton();
+            this.radioScale = new System.Windows.Forms.RadioButton();
+            this.radioFill = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabControl1.SuspendLayout();
             this.tabMovingButton.SuspendLayout();
             this.contextMenuStripMovingButton.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +97,7 @@
             this.tabControl1.Controls.Add(this.tabMovingButton);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(0, 29);
             this.tabControl1.Name = "tabControl1";
@@ -333,6 +353,150 @@
             this.toolStripRedoButton.ToolTipText = "Redo";
             this.toolStripRedoButton.Click += new System.EventHandler(this.toolStripRedoButton_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(792, 394);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "Image Viewer";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 388);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(780, 343);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.showButton);
+            this.flowLayoutPanel1.Controls.Add(this.clearButton);
+            this.flowLayoutPanel1.Controls.Add(this.backgroundButton);
+            this.flowLayoutPanel1.Controls.Add(this.closeButton);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(199, 352);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(584, 33);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // showButton
+            // 
+            this.showButton.AutoSize = true;
+            this.showButton.Location = new System.Drawing.Point(486, 3);
+            this.showButton.Name = "showButton";
+            this.showButton.Size = new System.Drawing.Size(95, 25);
+            this.showButton.TabIndex = 0;
+            this.showButton.Text = "Show a picture";
+            this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.AutoSize = true;
+            this.clearButton.Location = new System.Drawing.Point(376, 3);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(104, 25);
+            this.clearButton.TabIndex = 1;
+            this.clearButton.Text = "Clear the picture";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // backgroundButton
+            // 
+            this.backgroundButton.AutoSize = true;
+            this.backgroundButton.Location = new System.Drawing.Point(220, 3);
+            this.backgroundButton.Name = "backgroundButton";
+            this.backgroundButton.Size = new System.Drawing.Size(150, 25);
+            this.backgroundButton.TabIndex = 2;
+            this.backgroundButton.Text = "Set the background color";
+            this.backgroundButton.UseVisualStyleBackColor = true;
+            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.AutoSize = true;
+            this.closeButton.Location = new System.Drawing.Point(139, 3);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(75, 25);
+            this.closeButton.TabIndex = 3;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.radioOriginal);
+            this.flowLayoutPanel2.Controls.Add(this.radioScale);
+            this.flowLayoutPanel2.Controls.Add(this.radioFill);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 352);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(190, 33);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // radioOriginal
+            // 
+            this.radioOriginal.AutoSize = true;
+            this.radioOriginal.Checked = true;
+            this.radioOriginal.Location = new System.Drawing.Point(3, 11);
+            this.radioOriginal.Name = "radioOriginal";
+            this.radioOriginal.Size = new System.Drawing.Size(67, 19);
+            this.radioOriginal.TabIndex = 1;
+            this.radioOriginal.TabStop = true;
+            this.radioOriginal.Text = "Original";
+            this.radioOriginal.UseVisualStyleBackColor = true;
+            this.radioOriginal.CheckedChanged += new System.EventHandler(this.radioOriginal_CheckedChanged);
+            // 
+            // radioScale
+            // 
+            this.radioScale.AutoSize = true;
+            this.radioScale.Location = new System.Drawing.Point(76, 11);
+            this.radioScale.Name = "radioScale";
+            this.radioScale.Size = new System.Drawing.Size(52, 19);
+            this.radioScale.TabIndex = 0;
+            this.radioScale.TabStop = true;
+            this.radioScale.Text = "Scale";
+            this.radioScale.UseVisualStyleBackColor = true;
+            this.radioScale.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioFill
+            // 
+            this.radioFill.AutoSize = true;
+            this.radioFill.Location = new System.Drawing.Point(134, 11);
+            this.radioFill.Name = "radioFill";
+            this.radioFill.Size = new System.Drawing.Size(40, 19);
+            this.radioFill.TabIndex = 2;
+            this.radioFill.TabStop = true;
+            this.radioFill.Text = "Fill";
+            this.radioFill.UseVisualStyleBackColor = true;
+            this.radioFill.CheckedChanged += new System.EventHandler(this.radioFill_CheckedChanged);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -368,6 +532,13 @@
             this.openFileDialog1.DefaultExt = "rtf";
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // openImageDialog
+            // 
+            this.openImageDialog.FileName = "openFileDialog2";
+            this.openImageDialog.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
+    "s (*.*)|*.*";
+            this.openImageDialog.Title = "Select a picture file";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -386,6 +557,13 @@
             this.tabPage2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -426,5 +604,19 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton toolStripUndoButton;
         private ToolStripButton toolStripRedoButton;
+        private TabPage tabPage3;
+        private TableLayoutPanel tableLayoutPanel1;
+        private PictureBox pictureBox1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button showButton;
+        private Button clearButton;
+        private Button backgroundButton;
+        private Button closeButton;
+        private OpenFileDialog openImageDialog;
+        private ColorDialog colorDialog1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private RadioButton radioOriginal;
+        private RadioButton radioScale;
+        private RadioButton radioFill;
     }
 }
