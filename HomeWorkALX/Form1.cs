@@ -1,7 +1,14 @@
+using System.Windows.Forms.Design;
+
 namespace HomeWorkALX
 {
     public partial class Form1 : Form
     {
+        public string FileName { get; private set; }
+        public bool Modified { get; private set; }
+        public string AppName { get; private set; }
+
+        
         public Form1()
         {
             InitializeComponent();
@@ -24,11 +31,11 @@ namespace HomeWorkALX
             var numb2 = Convert.ToDouble(number2.Text);
             if ((numb1/numb2) % 2 == 0)
             {
-                MessageBox.Show($"Result of dividing Number 1 by Number 2 is: {numb1/numb2}, and that is a even number", "Result", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show($"Result of dividing {numb1} by {numb2} is: {numb1/numb2}, and that is a even number!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
-                MessageBox.Show($"Result of dividing Number 1 by Number 2 is: {numb1 / numb2}, and that is a odd number", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Result of dividing {numb1} by {numb2} is: {numb1 / numb2}, and that is a odd number!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }  
         }
 
@@ -42,5 +49,96 @@ namespace HomeWorkALX
             this.button1.Location = new Point(tabMovingButton.Width/2-50, tabMovingButton.Height/2-12);
         }
 
+        private void toolStripCutButton_Click(object sender, EventArgs e)
+        {
+            notePadBox.Cut();
+        }
+
+        private void toolStripCopyButton_Click(object sender, EventArgs e)
+        {
+            notePadBox.Copy();
+        }
+
+        private void toolStripPasteButton_Click(object sender, EventArgs e)
+        {
+            notePadBox.Paste();
+        }
+
+        private void toolStripNewButton_Click(object sender, EventArgs e)
+        {
+            if (Modified == true)
+            {
+                DialogResult dr = MessageBox.Show("Plik nie zosta³ zapisany. Zapisaæ?", "Plik niezapisany", MessageBoxButtons.YesNoCancel);
+                
+                if (dr == DialogResult.Cancel) 
+                {
+                    return;
+                }
+                else if (dr == DialogResult.Yes)
+                {
+                    toolStripSaveButton_Click(sender, e);
+                }
+
+                    FileName = null;
+                    Text = AppName;
+                    notePadBox.Clear();
+                    Modified = false;
+            }
+
+            FileName = null;
+            Text = AppName;
+            notePadBox.Clear();
+            Modified = false;
+        }
+
+        private void toolStripOpenButton_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.FileName.Length > 0)
+            {
+                notePadBox.LoadFile(openFileDialog1.FileName);
+                Text = AppName + " [" + openFileDialog1.FileName + "]";
+                Modified = false;
+            }
+        }
+
+        private void toolStripSaveButton_Click(object sender, EventArgs e)
+        {
+            if (FileName == null)
+            {
+                toolStripSaveAsButton_Click(sender, e);
+            }
+            else
+            {
+                notePadBox.SaveFile(FileName);
+                Modified = false;
+            }
+        }
+
+        private void toolStripSaveAsButton_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK && saveFileDialog1.FileName.Length > 0)
+            {
+                notePadBox.SaveFile(saveFileDialog1.FileName);
+                Text = AppName + " [" + saveFileDialog1.FileName + "]";
+
+                FileName = saveFileDialog1.FileName;
+                Modified = false;
+            }
+        }
+
+        private void notePadBox_TextChanged(object sender, EventArgs e)
+        {
+            Modified = true;
+        }
+
+        private void toolStripUndoButton_Click(object sender, EventArgs e)
+        {
+            notePadBox.Undo();
+        }
+
+        private void toolStripRedoButton_Click(object sender, EventArgs e)
+        {
+            notePadBox.Redo();
+        }
     }
 }
